@@ -7,7 +7,7 @@ import React from "react";
 
 /* Essa interface é utilizada para declararmos os tipos que serão recebidos pelo componente "Botao". */
 interface BotaoProps {
-  children: ReactElement;
+  children: ReactElement | string;
 }
 
 const Botao = (props: BotaoProps) => {
