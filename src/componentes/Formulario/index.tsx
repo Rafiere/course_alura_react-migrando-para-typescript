@@ -16,6 +16,8 @@ const Formulario = ({ aoColaboradorCadastrado, times }: FormularioProps) => {
   const [imagem, setImagem] = useState("");
   const [time, setTime] = useState("");
 
+  const [data, setData] = useState("");
+
   const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
     evento.preventDefault();
     aoColaboradorCadastrado({
@@ -23,11 +25,13 @@ const Formulario = ({ aoColaboradorCadastrado, times }: FormularioProps) => {
       cargo,
       imagem,
       time,
+      data,
     });
     setNome("");
     setCargo("");
     setImagem("");
     setTime("");
+    setData("");
   };
 
   return (
@@ -53,6 +57,13 @@ const Formulario = ({ aoColaboradorCadastrado, times }: FormularioProps) => {
           placeholder="Digite o endereço da imagem"
           valor={imagem}
           aoAlterado={(valor) => setImagem(valor)}
+        />
+        <CampoTexto
+          aoAlterado={(valor) => setData(data)}
+          label="Data de Entrada no Time"
+          placeholder=""
+          valor={data}
+          obrigatorio={true}
         />
         <ListaSuspensa
           obrigatorio={true}
